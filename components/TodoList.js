@@ -10,6 +10,7 @@ export default class TodoList extends Component {
         item.isCompleted = (item.isCompleted ? false : true)
         this.props.toggleTodo(item);
     }
+
     
     render() {
     

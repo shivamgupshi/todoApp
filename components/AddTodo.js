@@ -16,9 +16,12 @@ export default class AddTodo extends Component {
    }
    handleClick(e) {
       const node = this.refs.input;
-      const text = node.value.trim();
-      this.props.onAddClick(text);
-      node.value = ''
-   
+      const text = node.value;
+      if (text.length != 0){
+        this.props.onAddClick(text);
+        node.value = ''
+    }else{
+       alert('Please enter text')
    }
+ }
 }

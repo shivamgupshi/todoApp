@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { render } from 'react-dom'
-import { createStore , applyMiddleware  } from 'redux'
-import { fetchTodos, addTodo ,createTodos , updateTodos,patchTodos,createspecificTodos} from './actions/actions'
+import { render } from 'react-dom';
+import { createStore , applyMiddleware  } from 'redux';
+import { fetchTodos, addTodo ,createTodos , updateTodos,patchTodos,createspecificTodos} from './actions/actions';
 import thunk from 'redux-thunk';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 
 import App from './App.jsx'
 import todoApp from './reducers/reducers'
