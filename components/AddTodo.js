@@ -19,6 +19,6 @@ export default class AddTodo extends Component {
       const text = node.value.trim();
       this.props.onAddClick(text);
       node.value = ''
-      return false;
+   
    }
 }

@@ -2,6 +2,7 @@ export const ADD_TODO = 'ADD_TODO'
 export const Delete_TODO = 'Delete_TODO'
 export const recieved_All_TODO = 'recieved_All_TODO'
 export const create_TODO_user = 'create_TODO_user'
+export const togglecompletedTodos = 'togglecompletedTodos'
 
 //export const updateTodos = 'updateTodos'
 import fetch from 'cross-fetch'
@@ -43,13 +44,15 @@ export function createTodosUser(data) {
 }
 
 
-// export function completedTodosUser(data) {
-//     return {
-//         type: create_TODO_user,
-//         data
-//     }
 
-// }
+
+export function togglecompTodos(data) {
+    return {
+        type: togglecompletedTodos,
+        data
+    }
+
+}
 
 
 //get all todos
@@ -128,12 +131,13 @@ export function updateTodos(formValues) {
 
 //patching todos
 export function patchTodos(formValues) {
+   // console.log( formValues.isCompleted )
     return function(dispatch) {
-        return fetch(`http://localhost:3000/Todos/1`, {
+        return fetch(`http://localhost:3000/Todos/${formValues.id}`, {
             method: 'PATCH',
         headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
         body: JSON.stringify(formValues),
-        }).then((d) => console.log(d))
+        }).then((d) => dispatch(togglecompTodos(d._bodyText)))
           .catch((d) => console.log(d));  
     }
 

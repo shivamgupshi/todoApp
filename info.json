@@ -4,6 +4,16 @@
       "todo": "Shivam",
       "isCompleted": false,
       "id": 1
+    },
+    {
+      "todo": "Sachin",
+      "isCompleted": false,
+      "id": 2
+    },
+    {
+      "todo": "Tushar",
+      "isCompleted": false,
+      "id": 3
     }
   ]
 }
